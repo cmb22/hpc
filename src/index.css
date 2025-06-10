@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #aeadad69;
+    color: #111;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50e3c2;
+    --background-color: #f5f7fa;
+    --text-color: #333333;
+    --border-color: #333333;
+}

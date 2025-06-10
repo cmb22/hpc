@@ -1,0 +1,7 @@
+.customCard {
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 9px 6px rgba(1, 1, 1, 0.1);
+}
