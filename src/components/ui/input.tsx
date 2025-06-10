@@ -2,9 +2,6 @@
 import * as React from "react";
 import styles from "./input.module.css";
 
-export function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return <input
-    // className="w-full p-2 border rounded" 
-    className={styles.customInput}
-    {...props} />;
+export const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => {
+  return <input className={styles.customInput} {...props} />;
 }

@@ -4,7 +4,7 @@ import { HPC } from './pages/HPC'
 import { Success } from './pages/Success'
 import { Layout } from './components/Layout'
 
-export default function App() {
+export const App = () => {
   return (
     <Layout>
       <Routes>
@@ -15,3 +15,4 @@ export default function App() {
     </Layout>
   )
 }
+export default App;

@@ -1,6 +1,6 @@
 import styles from './errorMessage.module.css';
 
-export const ErrorMessage = ({ error }: { error?: string }) => {
+export const ErrorMessage = ({ error }: { error?: string | null }) => {
     return (
         <>
             {error && <div className={styles.errorMessage}>
@@ -10,4 +10,3 @@ export const ErrorMessage = ({ error }: { error?: string }) => {
         </>
     );
 }
-export default ErrorMessage;
