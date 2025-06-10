@@ -1,6 +1,10 @@
 
 import * as React from "react";
 import styles from "./card.module.css";
-export function Card({ children }: { children: React.ReactNode }) {
-  return <div className={styles.customCard}>{children}</div>;
+
+export function Card({ children, className }: { children: React.ReactNode, className?: string }) {
+
+  const cardClass = className ? `${styles.customCard} ${className}` : styles.customCard;
+
+  return <div className={cardClass}>{children}</div>;
 }

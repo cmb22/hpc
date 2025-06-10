@@ -5,6 +5,7 @@ type TProps = {
     email: string;
     password: string;
 }
+
 export const authenticate = async ({ email, password }: TProps): Promise<boolean | Error> => {
     try {
         // Simulate an API call with a delay

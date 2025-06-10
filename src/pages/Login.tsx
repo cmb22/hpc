@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router";
 import { authenticate } from "../services/login.api";
 import { Input } from "../components/ui/input"
@@ -12,12 +12,16 @@ export const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState<string | null>(null);
+    useEffect(() => {
+        setError(null)
+    }, [email, password])
     let navigate = useNavigate();
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         // TODO: Add proper Validation
-        // and API Call for login to fetch token and store in localStorage
+        // and extend dummy API Call for login to fetch token and store in localStorage
         if (!email || !password) {
             setError("Email and password are required");
             return;

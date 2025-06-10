@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { get } from 'lodash'
+import { useNavigate } from "react-router";
 import { Button } from '../components/ui/button'
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
@@ -35,6 +36,7 @@ export const HPC = () => {
     const [datasetIds, setDatasetIds] = useState<string>('')
     const [priority, setPriority] = useState('0.5')
     const [error, setError] = useState<Record<string, string>>({})
+    let navigate = useNavigate();
 
     // Reset error on any changes in form
     useEffect(() => {
@@ -95,6 +97,7 @@ export const HPC = () => {
         // If no errors, proceed with job submission
         // TODO: API call to be called to submit query to DB.
         console.log('Submitting job:', jobPayload)
+        navigate("/success") // Navigate to success page after submission
     }
 
 
@@ -147,6 +150,9 @@ export const HPC = () => {
                     <Label>Priority (0.0 - 1.0)</Label>
                     <Input
                         type="number"
+                        step="0.1"
+                        min="0.0"
+                        max="1.0"
                         value={priority}
                         onChange={(e) => setPriority(e.target.value)}
                     />

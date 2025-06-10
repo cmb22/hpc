@@ -1,3 +1,4 @@
+
 export const datasetIdValidation = (datasetIds: Array<any>): string | null => {
     const errorMessage = 'Dataset IDs must be a comma-separated list of numbers between 1 and 10';
 
@@ -7,6 +8,11 @@ export const datasetIdValidation = (datasetIds: Array<any>): string | null => {
 
     if (datasetIds.some(id => isNaN(id) || id <= 0 || id > 10)) {
         return errorMessage
+    }
+
+    const duplicates = datasetIds.filter((item, index) => datasetIds.indexOf(item) !== index);
+    if (duplicates.length > 0) {
+        return 'Dataset IDs must be unique'; // Duplicate IDs found
     }
 
     return null; // All IDs are valid
